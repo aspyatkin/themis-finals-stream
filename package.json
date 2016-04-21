@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "npm-check -u"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "hiredis": "^0.4.1",
     "knex": "^0.8.6",
     "netaddr": "^1.1.0",
+    "npm-check": "^5.2.1",
     "pg": "^4.4.1",
     "redis": "^0.12.1",
     "winston": "^1.0.1"
