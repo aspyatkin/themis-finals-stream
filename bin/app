@@ -8,12 +8,19 @@ var app = require('../lib/app')
 var logger = require('../lib/utils/logger')
 var eventStream = require('../lib/utils/event-stream')
 
-
-function getServerPort() {
-    return parseInt(process.env.PORT, 10) | 4000
+function getServerHost() {
+	return process.env.HOST || '127.0.0.1'
 }
 
-var server = app.listen(getServerPort(), function() {
+function getServerPort() {
+	var port = 4000
+	if (process.env.PORT_RANGE_START && process.env.APP_INSTANCE) {
+		port = parseInt(process.env.PORT_RANGE_START, 10) + parseInt(process.env.APP_INSTANCE, 10)
+	}
+	return port
+}
+
+var server = app.listen(getServerPort(), getServerHost(), function() {
     var port = server.address().port
     logger.info('Server listening on port ' + port)
     eventStream.run()
