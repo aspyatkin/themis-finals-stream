@@ -6,7 +6,7 @@
   "scripts": {
     "check": "npm-check -u",
     "build": "babel lib -d dist",
-    "lint": "standard --verbose lib/**/*.js | snazzy"
+    "lint": "standard --verbose \"lib/**/*.js\" | snazzy"
   },
   "repository": {
     "type": "git",
