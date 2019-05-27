@@ -1,9 +1,9 @@
 {
-  "name": "themis-finals-stream",
-  "version": "2.0.0",
+  "name": "volgactf-final-stream",
+  "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:themis-project/themis-finals-stream.git",
-  "author": "Alexander Pyatkin <aspyatkin@users.noreply.github.com>",
+  "repository": "git@github.com:VolgaCTF/volgactf-final-stream.git",
+  "author": "Alexander Pyatkin <aspyatkin@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "babel lib -d dist",
@@ -14,7 +14,7 @@
     "express": "4.14.0",
     "knex": "0.11.10",
     "netaddr": "1.1.0",
-    "pg": "^6.1.6",
+    "pg": "6.1.0",
     "redis": "2.6.2",
     "winston": "2.2.0"
   },
