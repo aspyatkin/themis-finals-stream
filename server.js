@@ -1,9 +1,9 @@
-const config = require('./utils/config')
+const config = require('./lib/util/config')
 config.loadSync()
 
-const app = require('./app')
-const logger = require('./utils/logger')
-const eventStream = require('./utils/event-stream')
+const app = require('./lib/app')
+const logger = require('./lib/util/logger')
+const eventStream = require('./lib/util/event-stream')
 const cluster = require('cluster')
 
 function getNumProcesses () {
@@ -34,7 +34,7 @@ if (cluster.isMaster) {
     cluster.fork()
   })
 } else {
-  let server = app.listen(getServerPort(), getServerHost(), function () {
+  const server = app.listen(getServerPort(), getServerHost(), function () {
     logger.info(`Worker ${process.pid}, server listening on ${server.address().address}:${server.address().port}`)
     eventStream.run()
   })
